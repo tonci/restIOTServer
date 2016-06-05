@@ -1,6 +1,6 @@
 var appRouter = function(app, db) {
 	app.get("/th", function(req, res) {
-	    db.collection(app.TH_COLLECTION).find({}).toArray(function(err, objects) {
+	    db.collection(app.TH_COLLECTION).find({}).limit(20).toArray(function(err, objects) {
 		if (err) {
 			handleError(res, err.message, "Failed to get data.");
 		} else {
